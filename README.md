@@ -9,27 +9,27 @@
 
 	server{
 
-    listen       8080;
+    		listen       8080;
 	
-    server_name  localhost;
+    		server_name  localhost;
       
-    charset utf-8;
+    		charset utf-8;
  
-    root html/ZhiShi/build;
-    index index.html index.htm;
+    		root html/ZhiShi/build;
+    		index index.html index.htm;
  
-    location / {
-        try_files $uri $uri/ /index.html;
-    }
+    		location / {
+        		try_files $uri $uri/ /index.html;
+    		}
 		
-    location /dist/ {
-	alias  html/ZhiShi/build/;
-    }
+    		location /dist/ {
+			alias  html/ZhiShi/build/;
+    		}
 		
-    error_page 500 502 503 504 /500.html;
-    client_max_body_size 20M;
-    keepalive_timeout 10;
-}
+    		error_page 500 502 503 504 /500.html;
+    		client_max_body_size 20M;
+    		keepalive_timeout 10;
+	}
 # Issues
 有问题可以添加issues，或者联系我
 # 联系
