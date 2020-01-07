@@ -12,7 +12,7 @@
     },
     {
       "name": "demo-iframe",
-      "src": "./docs/demo.html",
+      "src": "./docs/demo2.html",
       "iframe": true
     }
     
