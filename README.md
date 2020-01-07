@@ -5,10 +5,17 @@
 </br>预览：https://yc-tao.github.io/ZhiShi-v1.0/
 # 部署
 将此包下载下来，然后部署到nginx</br>
-server {
-        listen       8080;
+
+
+
+
+server{
+
+
+    listen       8080;
+	
         server_name  localhost;
-        
+      
         charset utf-8;
  
         root html/ZhiShi/build;
