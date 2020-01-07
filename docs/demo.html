@@ -1,4 +1,5 @@
 <pre>
+    <h4>js</h4>
     <code class="javascript">
         var a = 1;
         var b = 2;
@@ -6,178 +7,37 @@
             var c = 3;
         }
     </code>
+	<h4>css</h4>
     <code class="css">
         .text{
             width:10px;
             height:10px;
         }
     </code>
+	<h4>html</h4>
     <code class="html">
-        &lt;a class="extendlink" href="panel.html">mini.Panel &gt;
+        &lt;a class="text" href="#">demo &lt;/a&gt;
     </code>
 </pre>
-
-
-<h3>mini.DataGrid</h3>
-
-<p>表格。实现分页加载、自定义列、单元格渲染、行编辑器、锁定列、过滤行、汇总行等功能。</p>
-
-<h4>Extend</h4>
-<p><a class="extendlink" href="panel.html">mini.Panel</a></p>
-
-<h4>Usage</h4>
-<pre class="code"><span style="color:blue">&lt;</span><span style="color:maroon">div </span><span
-        style="color:red">id</span><span style="color:blue">="datagrid1" </span><span
-        style="color:red">class</span><span style="color:blue">="mini-datagrid" </span><span
-        style="color:red">style</span><span style="color:blue">="</span><span style="color:red">width</span><span
-        style="color:blue">:700px;</span><span style="color:red">height</span><span style="color:blue">:250px;"
-    </span><span style="color:red">url</span><span style="color:blue">="../data/AjaxService.aspx?method=SearchEmployees"
-&gt;
-    &lt;</span><span style="color:maroon">div </span><span style="color:red">property</span><span style="color:blue">="columns"&gt;
-        &lt;</span><span style="color:maroon">div </span><span style="color:red">type</span><span style="color:blue">="indexcolumn"&gt;&lt;/</span><span
-        style="color:maroon">div</span><span style="color:blue">&gt;
-        &lt;</span><span style="color:maroon">div </span><span style="color:red">field</span><span style="color:blue">="loginname" </span><span
-        style="color:red">width</span><span style="color:blue">="120" </span><span
-        style="color:red">headerAlign</span><span style="color:blue">="center" </span><span
-        style="color:red">allowSort</span><span style="color:blue">="true"&gt;</span>员工帐号<span
-        style="color:blue">&lt;/</span><span style="color:maroon">div</span><span style="color:blue">&gt;
-        &lt;</span><span style="color:maroon">div </span><span style="color:red">field</span><span style="color:blue">="name" </span><span
-        style="color:red">width</span><span style="color:blue">="120" </span><span
-        style="color:red">headerAlign</span><span style="color:blue">="center" </span><span
-        style="color:red">allowSort</span><span style="color:blue">="true"&gt;</span>姓名<span
-        style="color:blue">&lt;/</span><span style="color:maroon">div</span><span style="color:blue">&gt;
-        &lt;</span><span style="color:maroon">div </span><span style="color:red">header</span><span style="color:blue">="工作信息"&gt;
-            &lt;</span><span style="color:maroon">div </span><span style="color:red">property</span><span
-        style="color:blue">="columns"&gt;
-                &lt;</span><span style="color:maroon">div </span><span style="color:red">field</span><span
-        style="color:blue">="dept_name" </span><span style="color:red">width</span><span
-        style="color:blue">="120"&gt;</span>所属部门<span style="color:blue">&lt;/</span><span
-        style="color:maroon">div</span><span style="color:blue">&gt;
-                &lt;</span><span style="color:maroon">div </span><span style="color:red">field</span><span
-        style="color:blue">="position_name" </span><span style="color:red">width</span><span style="color:blue">="100"&gt;</span>职位<span
-        style="color:blue">&lt;/</span><span style="color:maroon">div</span><span style="color:blue">&gt;
-                &lt;</span><span style="color:maroon">div </span><span style="color:red">field</span><span
-        style="color:blue">="salary" </span><span style="color:red">width</span><span
-        style="color:blue">="100" </span><span style="color:red">allowSort</span><span
-        style="color:blue">="true"&gt;</span>薪资<span style="color:blue">&lt;/</span><span
-        style="color:maroon">div</span><span style="color:blue">&gt;
-            &lt;/</span><span style="color:maroon">div</span><span style="color:blue">&gt;
-        &lt;/</span><span style="color:maroon">div</span><span style="color:blue">&gt;
-    &lt;/</span><span style="color:maroon">div</span><span style="color:blue">&gt;
-&lt;/</span><span style="color:maroon">div</span><span style="color:blue">&gt;
-</span></pre>
-
-<h4>Screenshots</h4>
-
-
-<h4>Examples</h4>
-
-<div class="examples">
-    <a href="#" target="_blank">Base Example</a>
-</div>
-
-<div style="clear:both;"></div>
-<h4>Properties</h4>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-        <th><a href="setsupport.html" target="_blank" style="padding-left:5px;padding-right:5px;"> Set? </a></th>
-        <th><a href="getsupport.html" target="_blank" style="padding-left:5px;padding-right:5px;"> Get? </a></th>
-        <th><a href="tagsupport.html" target="_blank" style="padding-left:5px;padding-right:5px;"> Tag? </a></th>
-    </tr>
-    <tr>
-        <td>autoLoad</td>
-        <td>Boolean</td>
-        <td>是否自动加载数据。</td>
-        <td>false</td>
-        <td style="text-align:center;">&radic;</td>
-        <td style="text-align:center;">&radic;</td>
-        <td style="text-align:center;">&radic;</td>
-    </tr>
-
-</table>
-
-<h4>Methods</h4>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Parameter</th>
-        <th>Description</th>
-        <th>Return</th>
-    </tr>
-
-    <tr>
-        <td>load ( params, success, fail )</td>
-        <td>params：Object。参数对象。<br/>
-            success：Function。成功回调函数。<br/>
-            fail：Function。失败回调函数。
-        </td>
-        <td>加载数据。<br/>
-            比如，grid.load({key: "普加"})。
-            <br/>后台接收如下信息：
-            <pre>
-{
-    key: "普加",  //自定义
-    pageIndex: 0,
-    pageSize: 10,
-    sortField: "",
-    sortOrder: "asc"
-}
-</pre>
-            使用：String key = request.
-        </td>
-        <td></td>
-    </tr>
-</table>
-
-<h4>Events</h4>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>EventObject</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td>columnschanged</td>
-        <td>
-
-        </td>
-        <td>列改变时激发。如列显示/隐藏、列宽调整、列增加/删除等情况。</td>
-    </tr>
-    <tr>
-        <td>rowclick</td>
-        <td>
-<pre>
-{
-    sender: Object, //表格对象
-    record: Object //行对象
-}
-</pre>
-        </td>
-        <td>行点击时发生</td>
-    </tr>
-</table>
+<h4>图片</h4>
+<img src="/dist/docs/images/demo.jpg">
 
 <br/>
 <hr/>
 
-<h4 id="columns">Columns</h4>
-<p>表格列配置集合：columns，是一个数组，如：[column, column, ...]。其中一个column的配置参数如下表：</p>
+<h4>表格</h4>
+<p>这是一个表格</p>
 <table>
     <tr>
         <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
+        <th>Code</th>
+        <th>Age</th>
+        <th>Action</th>
     </tr>
     <tr>
-        <td>type</td>
-        <td>indexcolumn|checkcolumn|checkboxcolumn|comboboxcolumn|treeselectcolumn</td>
-        <td>列类型。创建几个特殊的列。</td>
-        <td></td>
+        <td>liming</td>
+        <td>1001</td>
+        <td>27岁</td>
+        <td>玩</td>
     </tr>
-
 </table>
