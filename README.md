@@ -4,7 +4,7 @@
 支持html、css、js、图片等方式
 </br>预览：https://yc-tao.github.io/ZhiShi-v1.0/
 # 部署
-将此包下载下来，然后部署到nginx
+将此包下载下来，然后部署到nginx</br>
 server {
         listen       8080;
         server_name  localhost;
