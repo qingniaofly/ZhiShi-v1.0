@@ -4,7 +4,7 @@
 	3.支持html、css、js、图片等方式
 </br>预览：https://yc-tao.github.io/ZhiShi-v1.0/
 # 部署
-将此包下载下来，然后部署到nginx</br>
+推荐部署到nginx，下面是nginx配置信息，提供参考
 
 
 	server{
@@ -30,6 +30,10 @@
     		client_max_body_size 20M;
     		keepalive_timeout 10;
 	}
+# 开始
+> ## 部署成功后，打开docs目录下的data.json
+> ### 1.可以编辑name、模板（用于显示属于自己模板）以及左侧知识树json信息，每一个知识节点要有name信息
+> ### 2.编辑每个节点对应的src，用于显示对应的知识信息，详情看demo。
 # Issues
 有问题可以添加issues，或者联系我
 # 联系
