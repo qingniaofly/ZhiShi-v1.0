@@ -9,6 +9,7 @@
 	了解简单的html知识
 # 部署
 推荐部署到nginx，下面是nginx配置信息，提供参考
+![githubusercontent](https://raw.githubusercontent.com/yc-tao/ZhiShi-v1.0/master/docs/images/nginx.png)  
 		
 	server{
 
