@@ -19,7 +19,7 @@
       
     		charset utf-8;
  
-    		root html/ZhiShi/build;
+    		root html/ZhiShi/v1.0.1/build;
     		index index.html index.htm;
  
     		location / {
@@ -27,7 +27,7 @@
     		}
 		
     		location /dist/ {
-			alias  html/ZhiShi/build/;
+			alias  html/ZhiShi/v1.0.1/build/;
     		}
 		
     		error_page 500 502 503 504 /500.html;
@@ -35,6 +35,7 @@
     		keepalive_timeout 10;
 	}
 ### 部署成功
+访问 localhost:8080
 ![githubusercontent](https://raw.githubusercontent.com/yc-tao/ZhiShi-v1.0/master/docs/images/example.jpg)  
 # 开始
 ### 部署成功后，进入docs，
