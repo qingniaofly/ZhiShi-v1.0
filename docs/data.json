@@ -8,11 +8,11 @@
   "data": [
     {
       "name": "demo",
-      "src": "/docs/demo.html"
+      "src": "./docs/demo.html"
     },
     {
       "name": "demo-iframe",
-      "src": "/docs/demo.html",
+      "src": "./docs/demo.html",
       "iframe": true
     }
     
