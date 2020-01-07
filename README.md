@@ -35,7 +35,7 @@
     		keepalive_timeout 10;
 	}
 ### 部署成功
-访问 localhost:8080
+访问 http://localhost:8080
 ![githubusercontent](https://raw.githubusercontent.com/yc-tao/ZhiShi-v1.0/master/docs/images/example.jpg)  
 # 开始
 ### 部署成功后，进入docs，
