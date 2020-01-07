@@ -30,8 +30,9 @@
     		client_max_body_size 20M;
     		keepalive_timeout 10;
 	}
-# 开始
+### 部署成功
 ![githubusercontent](https://raw.githubusercontent.com/yc-tao/ZhiShi-v1.0/master/docs/images/example.jpg)  
+# 开始
 #### 部署成功后，进入docs，在data.json中
 ##### 1、可以编辑name、模板（用于显示属于自己模板）以及左侧知识树json信息，每一个知识节点要有name信息
 ##### 2、编辑每个节点对应的src，用于显示对应的知识信息，详情看demo。
