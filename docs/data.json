@@ -1,0 +1,21 @@
+{
+  "name": "Zhi Shi",
+  "version": "v1.0",
+  "root": {
+    "name": "root",
+    "display": true
+  },
+  "data": [
+    {
+      "name": "demo",
+      "src": "/dist/docs/demo.html"
+    },
+    {
+      "name": "demo-iframe",
+      "src": "/dist/docs/demo.html",
+      "iframe": true
+    }
+    
+  ],
+  "template": "<h1>Zhi Shi</h1><p>开始您的知识构建吧！！！</p>"
+}
