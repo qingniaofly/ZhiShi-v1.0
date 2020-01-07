@@ -47,7 +47,7 @@
 		<2>、src => 点击时，显示的页面地址
 		<3>、children => 子信息节点
 		<4>、iframe => 是否以iframe显示知识详情信息
-#### 在docs下新建文件夹，创建html文件，可以参考
+#### 在docs下新建文件夹，创建html文件，可以参考demo.html
 	1、编辑页面
 		<1>、支持显示code，目前支持html、css、js。详情见demo.html
 		<2>、支持显示基本的html内容
