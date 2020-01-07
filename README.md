@@ -9,6 +9,7 @@
 	了解简单的html知识
 # 部署
 推荐部署到nginx，下面是nginx配置信息，提供参考
+		
 	server{
 
     		listen       8080;
