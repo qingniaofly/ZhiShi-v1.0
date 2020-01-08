@@ -49,7 +49,7 @@
 
 ### 部署成功
 
-访问 http://localhost:8080
+启动nginx，访问 http://localhost:8080
 
 ![githubusercontent](https://raw.githubusercontent.com/yc-tao/ZhiShi-v1.0/master/docs/images/example.jpg)  
 
