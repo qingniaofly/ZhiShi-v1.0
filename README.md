@@ -63,11 +63,13 @@
 	3、编辑root，知识根节点
 		<1>、name => 根节点名称
 		<2>、display => 是否显示
+	4、编辑path，配置路径信息，如：'/'，配置了此属性，可以直接定位到知识点
 	3、编辑data，数组对象形式，ztree的节点
 		<1>、name => 知识名称（必填）
 		<2>、src => 点击时，显示的页面地址
 		<3>、children => 子信息节点
 		<4>、iframe => 是否以iframe显示知识详情信息
+		<5>、path => "test" ，与根path配合，可以通过http://localhost:8080/test 定位到此知识点
 
 #### 在docs下新建文件夹，创建html文件，可以参考demo.html
 	1、编辑页面
