@@ -1,19 +1,33 @@
 {
   "name": "Zhi Shi",
-  "version": "v1.0",
+  "version": "v1.1",
   "root": {
     "name": "root",
     "display": true
   },
   "data": [
     {
+      "path": "demo1",
       "name": "demo",
-      "src": "./docs/demo.html"
+      "src": "/dist/docs/demo.html"
     },
     {
+      "path": "dem02",
       "name": "demo-iframe",
-      "src": "./docs/demo2.html",
+      "src": "/dist/docs/demo.html",
       "iframe": true
+    },
+    {
+      "path": "web",
+      "name": "web",
+      "open": true,
+      "children": [
+        {
+          "path": "react",
+          "name": "react",
+          "src": "/dist/docs/demo.html"
+        }
+      ]
     }
     
   ],
