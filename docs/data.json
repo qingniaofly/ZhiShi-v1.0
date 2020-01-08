@@ -1,25 +1,30 @@
 {
   "name": "Zhi Shi",
   "version": "v1.1",
+  "path": "/ZhiShi-v1.0/",
   "root": {
     "name": "root",
     "display": true
   },
   "data": [
     {
+      "path": "demo1",
       "name": "demo",
       "src": "./docs/demo.html"
     },
     {
+      "path": "dem02",
       "name": "demo-iframe",
       "src": "./docs/demo.html",
       "iframe": true
     },
     {
+      "path": "web",
       "name": "web",
       "open": true,
       "children": [
         {
+          "path": "react",
           "name": "react",
           "src": "./docs/demo.html"
         }
