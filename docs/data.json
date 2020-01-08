@@ -9,12 +9,12 @@
     {
       "path": "demo1",
       "name": "demo",
-      "src": "/dist/docs/demo.html"
+      "src": "./docs/demo.html"
     },
     {
       "path": "dem02",
       "name": "demo-iframe",
-      "src": "/dist/docs/demo.html",
+      "src": "./docs/demo.html",
       "iframe": true
     },
     {
@@ -25,7 +25,7 @@
         {
           "path": "react",
           "name": "react",
-          "src": "/dist/docs/demo.html"
+          "src": "./docs/demo.html"
         }
       ]
     }
