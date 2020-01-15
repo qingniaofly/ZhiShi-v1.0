@@ -1,0 +1,196 @@
+<h1>基本使用</h1>
+<p>介绍webpack的基本使用，具体的配置可前往
+    <a style="color: blue;" target="_blank" href="https://webpack.docschina.org/configuration/">
+        webpack官网
+    </a>
+</p>
+<h4>1.基本配置</h4>
+<pre>
+    <code class="javascript">
+        const config = {
+            mode: "development", // 开发模式
+            target: "node",     // 使用node
+            entry: "./app.js",    // 入口文件
+            output: {           // 输出
+                path: "/build"
+                filename: "bundle.js"
+            },
+            module: {
+                rules: []
+            },
+            plugins: []
+        }
+        module.exports = config
+    </code>
+</pre>
+
+<h4>2.简要说明</h4>
+<table>
+    <tr>
+        <th>参数名</th>
+        <th>可选值</th>
+        <th>详解</th>
+    </tr>
+    <tr>
+        <td>mode</td>
+        <td>development<br/>和<br/>production</td>
+        <td>
+            <pre>
+                <code>
+        development: 开发模式，将 process.env.NODE_ENV 的值设为 development，启用部分plugin
+        production: 生产模式，将 process.env.NODE_ENV 的值设为 production，启用多数plugin
+                </code>
+            </pre>
+        </td>
+    </tr>
+    <tr>
+        <td>entry</td>
+        <td>入口文件</td>
+        <td>
+            <pre>
+                <code>
+        "./app.js"
+                </code>
+            </pre>
+        </td>
+    </tr>
+    <tr>
+        <td>output</td>
+        <td>输出配置，path、filename和publicPath</td>
+        <td>
+            <pre>
+                <code>
+        path: 输出文件的绝对路径
+        filename: 输出文件名
+        publicPath: 虚拟路径，会在往index.html等引入的css或js文件url前加上此路径
+                </code>
+            </pre>
+        </td>
+    </tr>
+    <tr>
+        <td>module.rules</td>
+        <td>按照配置的规则打包，如：打包css和js</td>
+        <td>
+            <pre>
+                <code>
+           {
+                // 自己的css
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: ['style-loader', 'css-loader'],
+            },
+            {
+                // 第三方css
+                test: /\.css$/,
+                include: /node_modules/,
+                use: ['style-loader', 'css-loader'],
+            },
+            {
+                // js和jsx
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options:{}
+                },
+            }
+                </code>
+            </pre>
+        </td>
+    </tr>
+    <tr>
+        <td>plugins</td>
+        <td>插件，如：打包html模板、拷贝文件到指定目录</td>
+        <td>
+            <pre>
+                <code>
+        new HtmlWebpackPlugin({
+            /**
+             * /向template或者templateContent中注入所有静态资源，不同的配置值注入的位置不经相同，
+             * 1、true或者body：所有JavaScript资源插入到body元素的底部
+             * 2、head: 所有JavaScript资源插入到head元素中
+             * 3、false： 所有静态资源css和JavaScript都不会注入到模板文件中
+             * */
+            inject: true,
+            template: 'app/index.html', // 本地模板文件的路径
+            minify: {
+                //是否移除注释 默认false
+                removeComments: true,
+                //是否去除空格，默认false
+                collapseWhitespace: true,
+                //删除多余的属性
+                removeRedundantAttributes: true,
+                //使用短的文档类型，默认false
+                useShortDoctype: true,
+                //是否删除空属性，默认false
+                removeEmptyAttributes: true,
+                //删除style的类型属性， type="text/css" 默认值false
+                removeStyleLinkTypeAttributes: true,
+                keepClosingSlash: true,
+                minifyJS: true,
+                minifyCSS: true,
+                minifyURLs: true,
+            },
+        }),
+        // 创建可在编译时配置的全局常量
+        new webpack.ProvidePlugin({
+            jQuery:'jquery',
+            $:'jquery',
+        }),
+        // 文档按原路径输出
+        new CopyWebpackPlugin([
+            {
+                from: path.resolve(process.cwd(), 'app/docs'),
+                to: path.resolve(process.cwd(), 'build/docs'),
+            }
+        ])
+                </code>
+            </pre>
+        </td>
+    </tr>
+    <tr>
+        <td>optimization</td>
+        <td>优化代码，如：添加压缩以及混淆</td>
+        <td>
+            <pre>
+                <code>
+    {
+        minimize: true,
+        minimizer: [
+            // 压缩混淆
+            new TerserPlugin({
+                terserOptions: {
+                    warnings: false,
+                    compress: {
+                        comparisons: false,
+                    },
+                    parse: {},
+                    mangle: true,
+                    output: {
+                        comments: false,
+                        ascii_only: true,
+                    },
+                },
+                parallel: true,
+                cache: true,
+                sourceMap: true,
+            }),
+        ],
+    }
+                </code>
+            </pre>
+        </td>
+    </tr>
+    <tr>
+        <td>target</td>
+        <td>告知 webpack 为目标(target)指定一个环境</td>
+        <td>
+            <pre>
+                <code>
+                    web: 编译为类浏览器环境里可用（默认）
+                    node: 编译为类 Node.js 环境可用（使用 Node.js require 加载 chunk）
+                </code>
+            </pre>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,90 @@
+<h1>创建项目</h1>
+<p>介绍webpack的创建项目（基础版）</p>
+
+<h4>1、新建demo2文件夹，控制台进入该目录</h4>
+<p>执行 npm init</p>
+<img src="/dist/docs/data/web/webpack/createProject/images/1.png">
+<p>生成package.json</p>
+<img src="/dist/docs/data/web/webpack/createProject/images/2.png">
+
+<h4>2、添加webpack（备用）、express、html-webpack-plugin包</h4>
+<p>执行 npm install webpack express html-webpack-plugin -s</p>
+<img src="/dist/docs/data/web/webpack/createProject/images/3.png">
+
+<h4>3、新建app和webpack（备用）文件夹，目录结构如下</h4>
+<img src="/dist/docs/data/web/webpack/createProject/images/4.png">
+<pre>
+    <code>
+        index.js：开发模式入口（npm start 入口）
+        app.js：webpack打包入口（备用）
+        index.html：项目启动页面
+        webpack.dev.conf.js：开发模式webpack配置（备用）
+        webpack.prod.conf.js：生产模式webpack配置（备用）
+    </code>
+</pre>
+
+<h4>4、修改package.json</h4>
+<pre>
+    <code class="javascript">
+        "start": "node app/index.js",
+        "dev": "webpack --config webpack.dev.conf.js --color -p --progress --hide-modules --display-optimization-bailout",
+        "build": "webpack --config webpack.prod.conf.js --color -p --progress --hide-modules --display-optimization-bailout"
+    </code>
+</pre>
+<img src="/dist/docs/data/web/webpack/createProject/images/5.png">
+
+<h4>5、index.html内添加内容</h4>
+<pre>
+    <code class="html">
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="en"&gt;
+            &lt;head &gt;
+                &lt;meta charset="UTF-8"&gt;
+                &lt;title&gt;Title&lt;/title&gt;
+            &lt;/head>
+            &lt;body>
+            &lt;div id="app"&gt;
+                &lt;h1&lt;Hello World!!!&lt;/h1&gt;
+                &lt;/div&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+    </code>
+</pre>
+
+<h4>6、index.js内添加内容</h4>
+<pre>
+    <code class="javascript">
+const express = require('express')
+const app = express()
+
+const fs = require('fs')
+const path = require('path')
+
+app.get('*', (req, res) => {
+        fs.readFile(path.resolve(process.cwd(), 'index.html'), (err, file) => {
+            if (err) {
+                res.sendStatus(404);
+            } else {
+                res.send(file.toString());
+            }
+   });
+});
+
+const host = "http://127.0.0.1"
+const port = 8050
+app.listen(port,async err=>{
+    if(err){
+        console.error(err)
+    }else{
+        console.log('server start ', host+ ":" + port)
+    }
+})
+    </code>
+</pre>
+
+
+<h4>7、执行 npm start</h4>
+<img src="/dist/docs/data/web/webpack/createProject/images/8.png">
+<p>浏览 http://127.0.0.1:8050</p>
+<img src="/dist/docs/data/web/webpack/createProject/images/9.png">
+

@@ -1,0 +1,62 @@
+<h1>nginx部署</h1>
+<p>介绍如何在nginx部署网站</p>
+
+<h4>1、下载nginx</h4>
+<p>
+    <a style="color:blue;" target="_blank" href="http://nginx.org/en/download.html">http://nginx.org/en/download.html</a>
+</p>
+
+<h4>2、安装</h4>
+<p>直接解压到相应的目录</p>
+<img src="/dist/docs/data/other/nginx/images/1.jpg">
+
+<h4>3、运行</h4>
+<p>两种方式</p>
+<pre>
+    <code>
+        <1>、直接运行nginx.exe
+        <2>、cmd进入nignx.exe所在目录，执行 nginx
+    </code>
+</pre>
+
+<h4>4、部署</h4>
+<p>将需要部署的数据文件拷贝到某个目录，如直接放在nginx目录的html下</p>
+<img src="/dist/docs/data/other/nginx/images/2.jpg">
+<p>数据文件</p>
+<img src="/dist/docs/data/other/nginx/images/3.jpg">
+<p>配置conf目录下的nginx.conf文件</p>
+<pre>
+    <code>
+    server {
+
+        #监听的端口，80端口是默认端口，在访问时，就无需输入端口号，其他的都需要输入端口号，比如这里访问地址就是127.0.0.1，而若是8080端口，则是127.0.0.1：8080
+        listen       8092;
+        #此处localhost可改为要访问的域名或者ip地址，若有多个用空格隔开。例如 server_name www.baidu.com baidu.com test.baidu.com
+        server_name  localhost;
+        #编码
+        charset utf-8;
+
+        root html/ZhiShi/v1.0/build;
+        index index.html index.htm;
+
+        location / {
+                try_files $uri $uri/ /index.html;
+        }
+
+		location /dist/ {
+			alias  html/ZhiShi/v1.0/build/;
+		}
+
+        error_page 500 502 503 504 /500.html;
+        client_max_body_size 20M;
+        keepalive_timeout 10;
+	}
+    </code>
+</pre>
+
+<h4>5、重载nginx</h4>
+<p>cmd进入nginx目录，执行 nginx -s reload</p>
+
+<h4>6、访问</h4>
+<p>访问nginx配置的端口，如：<a style="color:blue;" target="_blank">http://localhost:8092</a></p>
+<img src="/dist/docs/data/other/nginx/images/4.png">

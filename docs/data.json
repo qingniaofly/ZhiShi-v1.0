@@ -1,31 +1,151 @@
 {
   "name": "Zhi Shi",
   "version": "v1.0",
+  "path": "/",
   "root": {
     "name": "root",
     "display": true
   },
   "data": [
     {
-      "name": "demo",
-      "src": "./docs/demo.html"
-    },
-    {
-      "name": "demo-iframe",
-      "src": "./docs/demo.html",
-      "iframe": true
-    },
-    {
+      "id": 1,
+      "path": "web",
       "name": "web",
       "open": true,
       "children": [
         {
+          "id": "1-1",
+          "path": "react",
           "name": "react",
-          "src": "./docs/demo.html"
+          "open": true,
+          "children": [
+            {
+              "path": "1",
+              "name": "基本使用",
+              "src": "./docs/data/web/react/index.html"
+            }
+          ]
+        },
+        {
+          "id": "1-2",
+          "path": "webpack",
+          "name": "webpack",
+          "open": false,
+          "children": [
+            {
+              "path": "1",
+              "name": "基本使用",
+              "src": "./docs/data/web/webpack/baseUse/index.html"
+            },
+            {
+              "path": "2",
+              "name": "创建项目",
+              "src": "./docs/data/web/webpack/createProject/index.html",
+              "iframe": false
+            }
+          ]
+        },
+        {
+          "id": "1-3",
+          "path": "components",
+          "name": "components",
+          "open": false,
+          "isParent":true,
+          "children": [
+            {
+              "id": "1-3-1",
+              "path": "nodeui",
+              "name": "nodeui",
+              "open": false,
+              "isParent":true,
+              "children": [
+                {
+                  "path": "checkbox",
+                  "name": "checkbox",
+                  "src": "./docs/data/web/components/nodeui/checkbox/demo.html"
+                }
+              ]
+            },
+            {
+              "id": "1-3-2",
+              "name": "messagebox",
+              "path": "messagebox",
+              "open": false,
+              "isParent":true,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "path": "database",
+      "name": "database",
+      "open": false,
+      "children": [
+        {
+          "id": "2-1",
+          "path": "mysql",
+          "name": "mysql",
+          "open": false,
+          "children": []
+        },
+        {
+          "id": "2-2",
+          "name": "sqlServer",
+          "open": false,
+          "children": []
+        },
+        {
+          "id": "2-3",
+          "name": "oracle",
+          "open": false,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "path": "other",
+      "name": "other",
+      "open": false,
+      "children": [
+        {
+          "id": "2-3",
+          "name": "github",
+          "open": false,
+          "children": []
+        },
+        {
+          "id": "3-3",
+          "path": "nginx",
+          "name": "nginx",
+          "open": false,
+          "children": [
+            {
+              "id": "3-3-1",
+              "path": "1",
+              "name": "常用命令",
+              "src": "./docs/data/other/nginx/demo.html"
+            },
+            {
+              "id": "3-3-1",
+              "path": "2",
+              "name": "部署",
+              "src": "./docs/data/other/nginx/demo2.html"
+            }
+          ]
+        },
+        {
+          "id": "3-3",
+          "path": "ngrok",
+          "name": "ngrok",
+          "open": false,
+          "src": "./docs/data/other/ngrok/demo.html"
         }
       ]
     }
-    
   ],
   "template": "<h1>Zhi Shi</h1><p>开始您的知识构建吧！！！</p>"
 }

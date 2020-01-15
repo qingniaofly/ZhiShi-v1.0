@@ -1,0 +1,159 @@
+<h1>基本使用</h1>
+<p>记录React的使用情况，遇到的问题及对应的解决方案，更多关于React请前往
+    <a style="color: blue;" href="https://react.docschina.org/" target="_blank" >React官网</a>
+</p>
+<h4>1、React的生命周期图</h4>
+<p>React 16.8.0及后续版本建议使用函数组件，React-Hook</p>
+<img src="/dist/docs/data/web/react/images/react.jpg">
+<h4>2、组件间通讯</h4>
+<pre>
+    <code>
+        1、父组件向子组件通讯
+            可以通过props
+
+        2、子组件向父组件通讯
+            可以通过父组件向子组件加回调函数，通过回调函数通讯
+
+        3、组件间通讯
+            <1>、使用共同的父组件
+            <2>、给组件添加ref属性
+
+    </code>
+</pre>
+<h4>3、React-Hook（16.8.0 新增）</h4>
+<p>只能在函数组件中使用</p>
+<pre>
+    <h4>useState</h4>
+    <code>
+        // 引入useState
+        import React, { useState } from 'react';
+
+        // 声明一个新的叫做 “count” 的 state 变量，使用setCount来更新count
+        const [count, setCount] = useState(0);
+    </code>
+    <h4>useEffect</h4>
+    <code>
+        // 引入useEffect
+        import React, {  useEffect } from 'react';
+
+        useEffect(() => {
+            // componentDidMont
+
+            return ()=>{
+                // componentWillUnmount
+            }
+
+        },[]); // 传空数组
+
+        useEffect(() => {
+
+            // componentDidUpdate，只有当count改变时才会触发
+
+        },[count]);// 传相应的的state,
+    </code>
+</pre>
+
+<h4>4、Context</h4>
+<p>提供了一个无需为每层组件手动添加 props，就能在组件树间进行数据传递的方法。</p>
+<p>用于在组件树内共享全局数据，如：当前登录的用户信息，主题色等</p>
+<pre>
+    <h4>（1）、React.createContext</h4>
+    <code>
+        // <1>、创建context
+
+        // 创建一个主色为红色的主题context， ThemeContext.js
+        const ThemeContext = React.createContext({primaryColor:"red"})
+        export default ThemeContext
+
+
+
+        // <2>、传递context
+
+        import ThemeContext from './ThemeContext'
+
+        // 修改主色为blue
+        const theme = {primaryColor:"blue"}// 可以修改成state
+        &lt;ThemeContext.Provider value={theme}&gt;
+            &lt;App /&gt;
+        &lt;/ThemeContext.Provider&gt;
+
+
+
+        // <3>、使用context
+
+        import ThemeContext from './ThemeContext'
+
+
+
+        // ①、在类组件中使用
+        static contextType = ThemeContext;
+        render() {
+            // 输出
+            console.log(this.context)
+            // => {primaryColor:"blue"}
+        }
+
+
+
+        // ②、在函数组件中使用
+        const theme = useContext(ThemeContext)
+        console.log(theme)
+        // => {primaryColor:"blue"}
+
+
+    </code>
+
+    <h4>（2）、自定义Provider</h4>
+
+    <pre>
+        <h4><1>、class类的Provider</h4>
+        <code>
+import React, { Component,Children } from 'react';
+import PropTypes from  "prop-types";
+
+const dataName = "store"
+class Provider extends React.Component {
+    //必须声明
+    static childContextTypes = {
+        [dataName]: PropTypes.object
+    }
+
+    constructor(props, context) {
+        super(props, context)
+        this[dataName] = {...props}
+    }
+
+    getChildContext() {
+        return { [dataName]: this[dataName] }
+    }
+
+     render() {
+        return Children.only(this.props.children)
+    }
+}
+
+export default Provider
+
+ // 在App中传递
+const _props = {}
+_props[dataName] = {name:"hello world"}
+&lt;Provider {..._props}&gt;
+    &lt;App {...props}/&gt;
+&lt;/Provider&gt;
+
+
+// 在函数组件中使用
+function Box(props, context){
+    console.log(context[dataName])
+    // =>  {name:"hello world"}
+}
+// 必须定义
+Box.contextTypes = {
+    [dataName]: PropTypes.object
+}
+
+
+        </code>
+    </pre>
+
+</pre>
